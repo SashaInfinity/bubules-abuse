@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 
-# screenshots/*
-# sessions/*
+screenshots/*
+sessions/*
