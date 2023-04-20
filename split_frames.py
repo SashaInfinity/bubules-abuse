@@ -31,7 +31,7 @@ while success:
     cropped_frame = frame[y:y+h, x:x+w]
 
     isSpacePressed = False
-    red_pixels = cv2.findNonZero(cv2.inRange(cropped_frame[0:3, 0:3], (0, 0, 200), (50, 50, 255)))
+    red_pixels = cv2.findNonZero(cv2.inRange(cropped_frame[0:50, :], (0, 0, 200), (50, 50, 255)))
     if red_pixels is not None:
         isSpacePressed = True
     
