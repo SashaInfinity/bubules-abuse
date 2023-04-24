@@ -129,5 +129,6 @@ dmypy.json
 .pyre/
 
 
-screenshots/*
-sessions/*
+record_screen/screenshots/*
+split_videos/sessions/*
+split_videos/videos/*

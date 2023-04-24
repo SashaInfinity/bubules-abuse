@@ -44,8 +44,9 @@ def make_screenshot(sct):
 def screen_record_start() -> int:
     sct = mss.mss()
 
-    driver_address = "127.0.0.1:63384"
+    driver_address = "127.0.0.1:59379"
     driver = connect_to_driver(driver_address)
+    print("READY")
 
     while True:
         screenshot = make_screenshot(sct)
