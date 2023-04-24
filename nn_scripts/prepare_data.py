@@ -23,5 +23,5 @@ for game_path in games:
             continue
         img = cv2.imread(str(img_path), cv2.IMREAD_UNCHANGED)
         resized = cv2.resize(img, (300, 150), interpolation=cv2.INTER_AREA)
-        out_img_path = out_path / f"{img_num - start:09d}_{spl[1]}.jpg"
+        out_img_path = out_path / f"{img_num - start:09d}_{spl[1][:-4]}.jpg"
         cv2.imwrite(str(out_img_path), resized)
