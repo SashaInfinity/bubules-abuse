@@ -1,6 +1,7 @@
 import cv2
+import easygui
 import os
-from pathlib import Path
+from tqdm import tqdm
 
 
 sessions_path = './sessions/'
@@ -14,10 +15,9 @@ def get_new_session():
     return new_session_num
 
 # Получить видео
-path_to_data = Path("./videos")
-file_paths = list(path_to_data.glob("*"))
-
-for file_path in file_paths:
+file_paths  = easygui.fileopenbox(multiple=True)
+for file_path in tqdm(file_paths):
+    print(file_path)
     video = cv2.VideoCapture(file_path)
     if not video.isOpened():
         print("Ошибка при открытии файла")

@@ -132,3 +132,4 @@ dmypy.json
 record_screen/screenshots/*
 split_videos/sessions/*
 split_videos/videos/*
+models/*

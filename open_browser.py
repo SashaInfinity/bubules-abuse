@@ -10,7 +10,7 @@ chrome_options.add_argument("--mute-audio")
 
 driver = webdriver.Chrome(chrome_options=chrome_options)
 driver.set_window_position(-8, -1)
-driver.get('https://key-test.ru/')
+driver.get('https://rides.imaginaryones.com/b-rider')
 
 while True:
     if driver.execute_script("return document.readyState") == "complete":
