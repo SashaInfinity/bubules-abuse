@@ -17,7 +17,7 @@ from nn_scripts.models.resnet import ResNet, ResidualBlock
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Device: {device}")
 
-batch_size = 208
+batch_size = 224
 
 games_path_data = Path("/media/kirrog/ssd_cache/data/bubble_abuse/data/clear")
 games = collect_datasets(games_path_data)
@@ -30,7 +30,7 @@ num_epochs = 50
 learning_rate = 1e-3
 weight_decay = 1e-8
 
-model = ResNet(ResidualBlock, [3, 4, 6, 3]).to(device)
+model = ResNet(ResidualBlock, [3, 2, 3, 1]).to(device)
 
 # Loss and optimizer
 criterion = nn.CrossEntropyLoss()
@@ -40,7 +40,7 @@ optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate, weight_decay=w
 # Train the model
 total_step = len(train_loader)
 
-experiment = "base"
+experiment = "distil"
 experiment_path = Path(f"../model/unique_feature/{experiment}")
 experiment_path.mkdir(exist_ok=True, parents=True)
 

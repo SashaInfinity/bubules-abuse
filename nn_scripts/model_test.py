@@ -6,7 +6,7 @@ MODEL_PATH_IN = "./models/ep_010_acc_0.953290.bin"
 def predict_space_state(screenshot):
     tensor = torch.from_numpy(screenshot).permute(2, 0, 1).unsqueeze(0).float()
 
-    model = ResNet(ResidualBlock, [3, 4, 6, 3])
+    model = ResNet(ResidualBlock, [3, 2, 3, 1])
     model.load_state_dict(torch.load(MODEL_PATH_IN))
     outputs = model(tensor)
 
